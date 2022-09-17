@@ -1,8 +1,19 @@
+# restaurants-react
+
+An app for tracking reviews of dishes at different restaurants.
+
 Para implementar las siguientes funcionalidades:
+
 List Restaurants
+
 Style App with Material Design
+
 Show Loading and Error States
-Add Restaurants# Getting Started with Create React App
+
+Add Restaurants
+
+# Getting Started with Create React App
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
