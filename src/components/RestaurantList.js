@@ -1,15 +1,16 @@
-import {useEffect} from 'react';
-
-export default function RestaurantList({loadRestaurants, restaurants}) {
-  useEffect(() => {
-    loadRestaurants();
-  }, [loadRestaurants]);
+export default function RestaurantList({useRestaurants}) {
+  const {restaurants, loading} = useRestaurants();
 
   return (
-    <ul>
-      {restaurants.map(restaurant => (
-        <li key={restaurant.id}>{restaurant.name}</li>
-      ))}
-    </ul>
+    <div>
+      {loading && <div>Cargando...</div>}
+      {!loading && (
+        <ul>
+          {restaurants.map(restaurant => (
+            <li key={restaurant.id}>{restaurant.name}</li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
