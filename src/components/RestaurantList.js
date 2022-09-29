@@ -1,16 +1,16 @@
-export default function RestaurantList({useRestaurants}) {
-  const {restaurants, loading} = useRestaurants();
+import {useRestaurants} from './useRestaurants';
+
+export default function RestaurantList() {
+  const {restaurants, error} = useRestaurants();
 
   return (
     <div>
-      {loading && <div>Cargando...</div>}
-      {!loading && (
-        <ul>
-          {restaurants.map(restaurant => (
-            <li key={restaurant.id}>{restaurant.name}</li>
-          ))}
-        </ul>
-      )}
+      {error ? <div>Error, intentelo más tarde</div> : null}
+      <ul>
+        {restaurants.map(restaurant => (
+          <li key={restaurant.id}>{restaurant.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }

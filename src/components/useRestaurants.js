@@ -3,7 +3,7 @@ const axios = require('axios').default;
 
 export function useRestaurants() {
   const [restaurants, setRestaurants] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
 
   useEffect(() => {
     async function getRestaurants() {
@@ -12,13 +12,12 @@ export function useRestaurants() {
           'https://api.outsidein.dev/nkt25RaVlQOPIXq6iEZ6a8pbJrgvzqYv/restaurants',
         );
         setRestaurants(data);
-      } catch (error) {
-        console.log(error);
+      } catch (apiError) {
+        setError(apiError);
       }
-      setLoading(false);
     }
     getRestaurants();
   }, []);
 
-  return {restaurants, loading};
+  return {restaurants, error};
 }
