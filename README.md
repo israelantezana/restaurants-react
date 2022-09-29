@@ -4,7 +4,7 @@ An app for tracking reviews of dishes at different restaurants.
 
 Para implementar las siguientes funcionalidades:
 
-List Restaurants
+List Restaurants - Done: Unit tests with MSW
 
 Style App with Material Design
 
