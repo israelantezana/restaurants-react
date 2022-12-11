@@ -5,6 +5,7 @@ export function useRestaurants() {
   const [restaurants, setRestaurants] = useState([]);
   const [error, setError] = useState();
 
+
   useEffect(() => {
     async function getRestaurants() {
       try {

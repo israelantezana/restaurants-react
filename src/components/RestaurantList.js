@@ -11,6 +11,9 @@ export default function RestaurantList() {
           <li key={restaurant.id}>{restaurant.name}</li>
         ))}
       </ul>
+    <div>
+          <button onClick={()=>{ alert('This is a simple alert'); }}>Click for Alert</button>
+    </div>
     </div>
   );
 }
