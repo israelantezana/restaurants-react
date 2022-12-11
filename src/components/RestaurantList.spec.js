@@ -25,11 +25,6 @@ describe('RestaurantList', () => {
     return res(ctx.status(500));
   });
 
-
-  const restaurantsNotFoundResponse = rest.get(restaurantsUrl, (req, res, ctx) => {
-    return res(ctx.status(404));
-  });
-
   const handlers = [restaurantsResponse];
 
   const server = new setupServer(...handlers);
@@ -56,12 +51,9 @@ describe('RestaurantList', () => {
     });
   });
 
-  it('Shows error message when api response of not found', async () => {
-    server.use(restaurantsNotFoundResponse);
-    render(<RestaurantList />); 
-    await waitFor(() => {
-      const errorMessage = screen.getByText('Error, intentelo más tarde');
-      expect(errorMessage).toBeVisible;
-    });
+  it('Shows error message when api response is...', async () => {
+      /*
+        Escribe tu prueba aquí, crea un mock y prueba que el error se mantiene.      
+      */  
   });
 });

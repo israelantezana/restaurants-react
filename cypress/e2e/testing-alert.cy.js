@@ -4,12 +4,9 @@ describe('Test a simple alert by clicking a button', function() {
     
         const stub = cy.stub()  
         cy.on ('window:alert', stub)
-        cy
-        .get('button').contains('Click for Alert').click()
-        .then(() => {
-          expect(stub.getCall(0)).to.be.calledWith('This is a simple alert')      
-        })  
-    
+        /*
+          Escribe aquí tu prueba para comprobar que al pulsar el botón se muestra una alerta con un texto específico. 
+          Para poder monitorear el proceso, utiliza el stub para ver el texto del cuadro de alerta.
+        */    
         })
-    
     })
